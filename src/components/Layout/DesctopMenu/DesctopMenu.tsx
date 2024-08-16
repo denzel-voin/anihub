@@ -10,9 +10,9 @@ export const  DesctopMenu = () => {
               <Link to='/'>AniHub</Link>
             </h1>
           <div className='flex gap-5'>
-            <NavLink to='/anime-list' className='text-lg'>Список аниме</NavLink>
-            <NavLink to='/last-updates' className='text-lg'>Последние обновления</NavLink>
-            <NavLink to='/schedule' className='text-lg'>Расписание</NavLink>
+            <NavLink to='/anime-list' className='header-link text-lg font-bold'>Список аниме</NavLink>
+            <NavLink to='/last-updates' className='header-link text-lg font-bold'>Последние обновления</NavLink>
+            <NavLink to='/schedule' className='header-link text-lg font-bold'>Расписание</NavLink>
           </div>
         </nav>
       </header>

@@ -24,3 +24,7 @@ li.ant-pagination-item > a {
 .ant-pagination-item-ellipsis {
     color: white !important;
 }
+
+.header-link.active {
+    @apply text-blue-500
+}

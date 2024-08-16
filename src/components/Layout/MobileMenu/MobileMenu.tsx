@@ -20,9 +20,9 @@ export const MobileMenu = () => {
       </header>
       <div className={`md:hidden absolute left-0 top-0 h-full w-full bg-slate-800 py-24 transition-transform ${active ? '-translate-y-0' : '-translate-y-full'}`}>
         <nav className='w-full h-full container flex flex-col items-end gap-5'>
-          <NavLink to='/anime-list' className='text-2xl font-semibold'>Список аниме</NavLink>
-          <NavLink to='/last-updates' className='text-2xl font-semibold'>Последние обновления</NavLink>
-          <NavLink to='/schedule' className='text-2xl font-semibold'>Расписание</NavLink>
+          <NavLink to='/anime-list' className='header-link text-2xl font-bold'>Список аниме</NavLink>
+          <NavLink to='/last-updates' className='header-link text-2xl font-bold'>Последние обновления</NavLink>
+          <NavLink to='/schedule' className='header-link text-2xl font-bold'>Расписание</NavLink>
         </nav>
       </div>
     </>
