@@ -1,6 +1,6 @@
 export interface AnimeCardProps {
-  key: number;
+  key: number | undefined;
   image: string;
   title: string;
-  code: string;
+  code: string | undefined;
 }
