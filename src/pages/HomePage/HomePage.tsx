@@ -1,34 +1,52 @@
 import { useEffect, useState } from 'react';
-import { Title } from '../../types/anime.types.ts';
+import { AnimeList, Title } from '../../types/anime.types.ts';
 import { $api } from '../../api';
-import { AnimeCard } from '../../components';
+import { AnimeCard, AnimeCardTopPage, Loader } from '../../components';
+import { AnimeTopList } from '../../data/AnimeTop.ts';
+import { Carousel } from 'antd';
 
 export const HomePage = () => {
   const [title, setTitle] = useState<Title>();
-  const [search, setSearch] = useState<string>();
+  const [titles, setTitles] = useState<Title[]>();
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    $api.get<Title>('/title/random', {})
-      .then(response => setTitle(response.data))
+    setLoading(true);
+    $api.get<Title>('/title/changes', {
+      params: {
+        playlist_type: 'array',
+        items_per_page: 3
+      }
+    })
+      .then(response => {
+        setTitles(response.data.list);
+        setLoading(false);
+      })
   }, []);
 
-  console.log(title);
+  if (loading) {
+    return <Loader />
+  }
+
   return (
     <>
-      <div className='container'>
-        <div className='max-w-80'>
-          {title && (<AnimeCard key={title?.id} image={title.posters.original.url} title={title.names.ru} code={title?.code} />)}
-        </div>
-        <div className='py-5 flex gap-2'>
-          <form onSubmit={e => e.preventDefault()}>
-            <input
-              className='bg-slate-950 border border-slate-500 outline-none'
-              type="text"
-            />
-            <button className='bg-slate-800 rounded-lg px-3 py-1'>Найти</button>
-          </form>
-        </div>
+      <div className='w-full'>
+
+        <Carousel autoplay>
+          {AnimeTopList.list.map(title => (
+            <div key={title.id}>
+              <AnimeCardTopPage
+                image={title.image}
+                title={title.title}
+                description={title.description}
+                link={title.link}
+              />
+            </div>
+          ))}
+        </Carousel>
+
       </div>
+
     </>
   )
 }

@@ -28,19 +28,21 @@ export const AnimeDetailPage = () => {
     return <Loader />;
   }
 
+  let count = 0;
+
   return (
     <>
       <div className='container py-5'>
         <div className='flex flex-col items-center gap-5 md:flex-row md:items-start'>
           <img src={IMG_HOST + title?.posters.original.url} alt="" />
-          <p className="text-justify">
-            {title?.description}
+          <div className="text-justify">
+            <p>{title?.description}</p>
             <div className="flex flex-wrap gap-2 mt-5">
               {title?.genres.map(genre => (
-                <Badge text={genre} />
+                <Badge text={genre} key={count += 1} />
               ))}
             </div>
-          </p>
+          </div>
         </div>
       </div>
       <div className="container py-5">
@@ -53,7 +55,7 @@ export const AnimeDetailPage = () => {
           className='bg-slate-800 p-2 rounded-lg outline-none cursor-pointer w-full'
         >
           {title?.player.list.map(episode => (
-            <option value={episode.episode}>Серия {episode.episode}</option>
+            <option value={episode.episode} key={count += 1} >Серия {episode.episode}</option>
           ))}
         </select>
 

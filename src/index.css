@@ -5,7 +5,7 @@
 html,
 body,
 #root {
-    @apply min-h-full min-w-full overflow-x-auto bg-slate-950 text-white;
+    @apply min-h-full min-w-full overflow-x-auto bg-zinc-950 text-white;
 }
 
 
@@ -26,5 +26,9 @@ li.ant-pagination-item > a {
 }
 
 .header-link.active {
-    @apply text-blue-500
+    @apply text-orange-500
+}
+
+a:hover {
+    color: inherit;
 }
