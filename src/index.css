@@ -5,32 +5,29 @@
 html,
 body,
 #root {
-    @apply min-h-full min-w-full overflow-x-auto bg-zinc-950 text-white;
+  @apply min-h-full min-w-full overflow-x-auto bg-zinc-950 text-white;
 }
 
-
 .anticon {
-    @apply text-white
+  @apply text-white;
 }
 
 li.ant-pagination-item {
-    background-color: transparent !important;
+  background-color: transparent !important;
 }
 
 li.ant-pagination-item > a {
-    color: white !important;
+  color: white !important;
 }
 
 .ant-pagination-item-ellipsis {
-    color: white !important;
+  color: white !important;
 }
 
 .header-link.active {
-    @apply text-orange-500
+  @apply text-orange-500;
 }
 
 a:hover {
-    color: inherit;
+  color: inherit;
 }
-
-

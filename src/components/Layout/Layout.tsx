@@ -9,5 +9,5 @@ export const Layout = () => {
       <MobileMenu />
       <Outlet />
     </>
-  )
-}
+  );
+};
