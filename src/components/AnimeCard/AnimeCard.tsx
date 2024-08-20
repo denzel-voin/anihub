@@ -32,7 +32,7 @@ export const AnimeCardTopPage = ({
     <>
       <div className="relative w-full max-h-[600px] overflow-hidden">
         <img
-          className="w-full h-full object-cover brightness-50"
+          className="w-full h-full object-cover brightness-50 min-h-[240px]"
           src={`${image}`}
           alt={`${title}`}
         />
