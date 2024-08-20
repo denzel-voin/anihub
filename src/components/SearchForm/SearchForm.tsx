@@ -19,7 +19,7 @@ export const SearchForm: FC<SearchFormProps> = ({ closeMenu }) => {
       .then(response => {
         console.log(response.data.list);
         closeMenu();
-        navigate('/search-results', { state: { titles: response.data.list } });
+        navigate('/anihub/search-results', { state: { titles: response.data.list } });
       });
   };
 
@@ -40,7 +40,7 @@ export const SearchForm: FC<SearchFormProps> = ({ closeMenu }) => {
         placeholder="Поиск аниме"
       />
       <button className="w-10 hover:opacity-80">
-        <img src="../../../public/search.svg" alt="search" />
+        <img src="/anihub/search.svg" alt="search" />
       </button>
     </form>
   );

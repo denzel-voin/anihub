@@ -11,11 +11,11 @@ export const App = () => {
   return (
     <>
       <Routes>
-        <Route path="/" element={<Layout />}>
-          <Route path="/" element={<HomePage />} index></Route>
-          <Route path="/anime-list" element={<AnimeListPage />}></Route>
-          <Route path="/title/:code" element={<AnimeDetailPage />}></Route>
-          <Route path="/search-results" element={<SearchResultsPage />} />
+        <Route path="/anihub" element={<Layout />}>
+          <Route path="/anihub" element={<HomePage />} index></Route>
+          <Route path="/anihub/anime-list" element={<AnimeListPage />}></Route>
+          <Route path="/anihub/title/:code" element={<AnimeDetailPage />}></Route>
+          <Route path="/anihub/search-results" element={<SearchResultsPage />} />
         </Route>
       </Routes>
     </>

@@ -11,7 +11,7 @@ export const AnimeCard = ({ image, title, code }: AnimeCardProps) => {
         <h2 className="text-center text-lg mt-2 truncate">{title}</h2>
         <div className="flex items-center justify-center p-2">
           <Link
-            to={`/title/${code}`}
+            to={`/anihub/title/${code}`}
             className="bg-gradient-to-r from-orange-900 to-red-900 px-3 py-2 rounded-lg font-semibold hover:opacity-85 transition-opacity"
           >
             Перейти к просмотру
@@ -47,7 +47,7 @@ export const AnimeCardTopPage = ({
               </p>
             </div>
             <Link
-              to={`/title/${link}`}
+              to={`/anihub/title/${link}`}
               className="inline-block px-6 py-4 bg-red-700 hover:bg-red-600 text-white font-bold uppercase rounded-lg transition-colors"
             >
               Перейти к просмотру

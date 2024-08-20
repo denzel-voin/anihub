@@ -15,9 +15,9 @@ export const MobileMenu = () => {
       <header className="md:hidden sticky top-0 left-0 bg-zinc-900 border-b-slate-500 z-50">
         <nav className="container flex items-center justify-between py-2">
           <h1 className="text-2xl font-bold bg-gradient-to-r from-blue-500 to-violet-500 bg-clip-text text-transparent">
-            <Link to="/">
+            <Link to="/anihub">
               <img
-                src="../../../../public/logo.svg"
+                src="/anihub/logo.svg"
                 alt=""
                 className="w-40"
                 onClick={() => setActive(false)}
@@ -35,7 +35,7 @@ export const MobileMenu = () => {
         <nav className="w-full h-full container flex flex-col items-end gap-5">
           <SearchForm closeMenu={closeMenu} />
           <NavLink
-            to="/anime-list"
+            to="/anihub/anime-list"
             className="header-link text-2xl font-bold"
             onClick={() => setActive(!active)}
           >
