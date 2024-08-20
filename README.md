@@ -1,50 +1,23 @@
-# React + TypeScript + Vite
+# AnimeHub
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+AnimeHub — это веб-приложение для поиска, просмотра и отслеживания аниме. Проект создан с использованием React, TypeScript и Tailwind CSS.
 
-Currently, two official plugins are available:
+## Особенности
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Поиск аниме по названию и жанру
+- Просмотр подробной информации о каждом аниме
+- Респонсивный дизайн, адаптированный для мобильных устройств
 
-## Expanding the ESLint configuration
+## Стек технологий
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- **React** — библиотека для построения пользовательских интерфейсов
+- **TypeScript** — язык программирования с статической типизацией
+- **Tailwind CSS** — утилитарный CSS-фреймворк для создания адаптивного дизайна
+- **React Router** — маршрутизация в приложении
+- **Axios** — для работы с API
 
-- Configure the top-level `parserOptions` property like this:
+## Приложение доступно по ссылке [Деплой](https://denzel-voin.github.io/anihub).
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-});
-```
+## API
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
-
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react';
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-});
-```
+- Приложение использует публичный [API Анилибрии](https://github.com/anilibria/docs/blob/master/api_v3.md) для получения данных об аниме. В проекте используется Axios для выполнения HTTP-запросов.
