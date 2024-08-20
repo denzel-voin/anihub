@@ -63,6 +63,7 @@ export const AnimeDetailPage = () => {
           <div className='mt-5' key={episode.uuid}>
             {episode.episode === activeEpisode ?
               <ReactPlayer
+                className="rounded-lg overflow-hidden"
                 width='100%'
                 height='100%'
                 url={VIDEO_HOST + episode.hls.hd}

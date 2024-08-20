@@ -25,13 +25,17 @@ export const AnimeCardTopPage = ({image, title, link, description}) => {
       <div className="relative w-full max-h-[600px] overflow-hidden">
         <img className="w-full h-full object-cover brightness-50" src={`${image}`} alt={`${title}`} />
         <div
-          className="absolute inset-0 flex flex-col justify-start items-start p-5 bg-gradient-to-b from-[rgba(0,0,0,0.7)] to-[rgba(0,0,0,0.1)] text-white">
-          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">{title}</h1>
-          <p className="text-base md:text-lg lg:text-xl mb-6 max-w-2xl">{description}</p>
-          <Link to={`/title/${link}`}
-                className="inline-block px-4 py-2 bg-red-700 hover:bg-red-600 text-white font-semibold uppercase rounded-lg transition-colors">
-            Перейти к просмотру
-          </Link>
+          className="absolute inset-0 flex flex-col justify-between items-start p-5 bg-gradient-to-b from-[rgba(0,0,0,0.7)] to-[rgba(0,0,0,0.1)] text-white">
+          <div className='container h-full flex flex-col justify-between items-start'>
+            <div>
+              <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">{title}</h1>
+              <p className="hidden md:block text-xs md:text-lg lg:text-xl mb-6 max-w-2xl">{description}</p>
+            </div>
+            <Link to={`/title/${link}`}
+                  className="inline-block px-6 py-4 bg-red-700 hover:bg-red-600 text-white font-bold uppercase rounded-lg transition-colors">
+              Перейти к просмотру
+            </Link>
+          </div>
         </div>
       </div>
     </>

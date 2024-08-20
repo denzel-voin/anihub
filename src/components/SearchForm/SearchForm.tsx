@@ -3,7 +3,7 @@ import { AnimeList, Title } from '../../types/anime.types.ts';
 import { $api } from '../../api';
 import { useNavigate } from 'react-router-dom';
 
-export const SearchForm = () => {
+export const SearchForm = ({ closeMenu }) => {
   const [search, setSearch] = useState('');
   const [titles, setTitles] = useState<Title[]>();
   const navigate = useNavigate();
@@ -16,6 +16,7 @@ export const SearchForm = () => {
     }).then(response => {
       console.log(response.data.list);
       setTitles(response.data.list);
+      closeMenu();
       navigate('/search-results', { state: { titles: response.data.list } });
     });
   };
@@ -33,7 +34,7 @@ export const SearchForm = () => {
         onChange={e => setSearch(e.target.value)}
         placeholder={'Поиск аниме'}
       />
-      <button className='w-10 hover:opacity-80'>
+      <button className='w-10 hover:opacity-80' >
         <img src="../../../public/search.svg" alt="" />
       </button>
     </form>
